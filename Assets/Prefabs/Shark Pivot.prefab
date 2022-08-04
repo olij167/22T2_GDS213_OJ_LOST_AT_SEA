@@ -466,7 +466,7 @@ MonoBehaviour:
         Evaluator","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-391.2695,209.655167)"},"ID":6,"Name":"Attack
         Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ReadyToAttack","NodeData":{"Offset":"(-182.197632,183.847443)"},"ID":7,"Name":"Ready
         To Attack","Instant":true,"SharedIntattackCount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
-        Count","IsShared":true,"Int32mValue":0},"Int32minRateOfAttack":4,"Int32maxRateOfAttack":16,"Int32rateOfAttack":8},{"Type":"SharkAttack","NodeData":{"Offset":"(-22.87629,182.90332)"},"ID":8,"Name":"Shark
+        Count","IsShared":true,"Int32mValue":0},"Int32minRateOfAttack":4,"Int32maxRateOfAttack":12,"Int32rateOfAttack":8},{"Type":"SharkAttack","NodeData":{"Offset":"(-22.87629,182.90332)"},"ID":8,"Name":"Shark
         Attack","Instant":true,"Singlespeed":6,"SingledistanceFromTarget":3,"SingleattackTimer":2.5,"SharedIntattackCount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
         Count","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedInt","NodeData":{"Offset":"(125.18364,176.560333)"},"ID":9,"Name":"Set
         Shared Int","Instant":true,"SharedInttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedInttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
