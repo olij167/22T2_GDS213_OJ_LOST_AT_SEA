@@ -8,7 +8,7 @@ public class LeaveTimer : Action
 {
     public float leaveTimer, maxLeaveTimer, minLeaveTimer;
 
-    public bool isLeaving;
+    public SharedBool isLeaving;
 
     public override void OnAwake()
     {
@@ -19,13 +19,13 @@ public class LeaveTimer : Action
     {
         leaveTimer -= Time.deltaTime;
 
-        if (leaveTimer <= 0f)
+        if (leaveTimer <= 0f || isLeaving.Value)
         {
-            isLeaving = true;
+            isLeaving.Value = true;
             return TaskStatus.Success;
         }
 
-        isLeaving = false;
+        //isLeaving = false;
         return TaskStatus.Running;
     }
 }

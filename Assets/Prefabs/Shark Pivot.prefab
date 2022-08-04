@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 4007749288490808236}
   - component: {fileID: 4007749288490808235}
   - component: {fileID: 4007749288490808238}
+  - component: {fileID: 271407775227502269}
   m_Layer: 6
   m_Name: Shark Pivot
   m_TagString: Shark
@@ -471,8 +472,8 @@ MonoBehaviour:
         Count","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedInt","NodeData":{"Offset":"(125.18364,176.560333)"},"ID":9,"Name":"Set
         Shared Int","Instant":true,"SharedInttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedInttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
         Count","IsShared":true,"Int32mValue":0}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(321.344574,224.777161)"},"ID":10,"Name":"Circle
-        Player Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"LeaveTimer","NodeData":{"Offset":"(-355.057678,184.424683)"},"ID":11,"Name":"Leave
-        Timer","Instant":true,"SingleleaveTimer":0,"SinglemaxLeaveTimer":60,"SingleminLeaveTimer":30,"BooleanisLeaving":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-158.096756,180.253387)"},"ID":12,"Name":"Destroy
+        Player Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"LeaveTimer","NodeData":{"Offset":"(-365.714233,205.000137)"},"ID":11,"Name":"Leave
+        Timer","Instant":true,"SingleleaveTimer":0,"SinglemaxLeaveTimer":60,"SingleminLeaveTimer":30,"SharedBoolisLeaving":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isLeaving","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-112.3252,358.544556)"},"ID":12,"Name":"Destroy
         Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"LeavingConditional","NodeData":{"Offset":"(-307.169769,166.225128)"},"ID":13,"Name":"Leaving
         Conditional","Instant":true,"LeaveTimerleaveTimer":11},{"Type":"WaypointReached","NodeData":{"Offset":"(-75.23038,169.5978)"},"ID":14,"Name":"Waypoint
         Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
@@ -484,7 +485,7 @@ MonoBehaviour:
         Point","IsShared":true}}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"inCircleRange","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Waypoint
         Count","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"raft","IsShared":true,"GameObjectmValue":0},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
         Count","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
-        Point","IsShared":true}]}'
+        Point","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isLeaving","IsShared":true,"BooleanmValue":false}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -534,6 +535,18 @@ MonoBehaviour:
   airAngularDrag: 1
   floatingPower: 5
   floaterUnderWater: 0
+--- !u!114 &271407775227502269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007749288490808234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b1278029ee8749b64b82dc5f5bb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4007749288664725125
 GameObject:
   m_ObjectHideFlags: 0

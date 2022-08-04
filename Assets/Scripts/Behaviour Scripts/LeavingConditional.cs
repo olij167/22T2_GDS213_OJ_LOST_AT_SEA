@@ -10,7 +10,7 @@ public class LeavingConditional : Conditional
 
     public override TaskStatus OnUpdate()
     {
-        if (leaveTimer.isLeaving)
+        if (leaveTimer.isLeaving.Value)
         {
             return TaskStatus.Success;
         }

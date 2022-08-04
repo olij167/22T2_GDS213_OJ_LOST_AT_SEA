@@ -34,11 +34,11 @@ public class SetNewWaypoint : Action
         {
             count.Value++;
             attackCount.Value++;
-            target.SetValue(targetList[count.Value]);
+            target.SetValue(targetList[count.Value - 1]);
         }
         else if (count.Value >= targetList.Length)
         {
-            count = 0;
+            count.Value = 0;
             target.SetValue(targetList[count.Value]);
         }
 

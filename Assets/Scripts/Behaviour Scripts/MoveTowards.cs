@@ -17,7 +17,7 @@ public class MoveTowards : Action
     public SharedTransform exitPoint;
     public override TaskStatus OnUpdate()
     {
-        if (leaveTimer.isLeaving)
+        if (leaveTimer.isLeaving.Value)
         {
             target.SetValue(exitPoint.Value);
         }
