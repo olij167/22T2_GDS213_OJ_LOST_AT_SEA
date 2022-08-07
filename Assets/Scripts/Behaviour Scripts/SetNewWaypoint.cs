@@ -15,7 +15,7 @@ public class SetNewWaypoint : Action
 
     public override void OnAwake()
     {
-        count.SetValue(Random.Range(0, targetList.Length));
+        
         
         targetList = new Transform[GameObject.FindGameObjectsWithTag("Waypoint").Length];
 
@@ -23,6 +23,8 @@ public class SetNewWaypoint : Action
         {
             targetList[i] = GameObject.FindGameObjectsWithTag("Waypoint")[i].transform;
         }
+
+        count.SetValue(Random.Range(0, targetList.Length));
 
         target.SetValue(targetList[Random.Range(0, targetList.Length)]);
         currentTarget = target.Value;

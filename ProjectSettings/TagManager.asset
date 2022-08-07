@@ -11,16 +11,18 @@ TagManager:
   - Shark
   - Time Cycle
   - Oar
+  - SharkBait
+  - AttackPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Shark
-  - 
-  - 
+  - Boat Floatie
+  - Boat
   - 
   - 
   - 

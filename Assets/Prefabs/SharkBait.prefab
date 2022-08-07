@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &782101273221127626
+--- !u!1 &6771873017718045272
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 782101273221127222}
-  - component: {fileID: 782101273221127625}
-  - component: {fileID: 782101273221127624}
-  - component: {fileID: 782101273221127627}
-  - component: {fileID: 605327996782757452}
+  - component: {fileID: 6771873017718045268}
+  - component: {fileID: 6771873017718045271}
+  - component: {fileID: 6771873017718045270}
+  - component: {fileID: 6771873017718045273}
+  - component: {fileID: 6771873017718045266}
+  - component: {fileID: 6771873017718045269}
   m_Layer: 0
-  m_Name: OceanPlane
-  m_TagString: Ocean
+  m_Name: SharkBait
+  m_TagString: SharkBait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &782101273221127222
+--- !u!4 &6771873017718045268
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782101273221127626}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.343498, y: -0.92778534, z: -9.493498}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_GameObject: {fileID: 6771873017718045272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.87, y: 25, z: 7.0000863}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &782101273221127625
+--- !u!33 &6771873017718045271
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782101273221127626}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &782101273221127624
+  m_GameObject: {fileID: 6771873017718045272}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6771873017718045270
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782101273221127626}
+  m_GameObject: {fileID: 6771873017718045272}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a72ae79488f0f8842a85c4f9e9de1779, type: 2}
+  - {fileID: 2100000, guid: 7b4cbe31fc9d9c440b0c36cf6c3c9523, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,50 +86,52 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &782101273221127627
-MeshCollider:
+--- !u!135 &6771873017718045273
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782101273221127626}
+  m_GameObject: {fileID: 6771873017718045272}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &605327996782757452
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6771873017718045266
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771873017718045272}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6771873017718045269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782101273221127626}
+  m_GameObject: {fileID: 6771873017718045272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1e5ce03f3fde148b4372ac088c4681, type: 3}
+  m_Script: {fileID: 11500000, guid: 51d568205b1d4c943baec4f1cee25d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharkBehaviour: {fileID: 4007749288490808236, guid: fc0add5fcdc8c3f49bb89b49ac62ebd5,
-    type: 3}
-  isBaitInWater:
-    mIsShared: 0
-    mIsGlobal: 1
-    mIsDynamic: 0
-    mName: 
-    mToolTip: 
-    mPropertyMapping: 
-    mPropertyMappingOwner: {fileID: 0}
-    mValue: 0
-  baitPos:
-    mIsShared: 0
-    mIsGlobal: 1
-    mIsDynamic: 0
-    mName: 
-    mToolTip: 
-    mPropertyMapping: 
-    mPropertyMappingOwner: {fileID: 0}
-    mValue: {x: 0, y: 0, z: 0}
-  baitInWater: 0
+  floatingObjects:
+  - {fileID: 6771873017718045268}
+  underWaterDrag: 3
+  underWaterAngularDrag: 1
+  airDrag: 3
+  airAngularDrag: 0.05
+  floatingPower: 500
+  floaterUnderWater: 0

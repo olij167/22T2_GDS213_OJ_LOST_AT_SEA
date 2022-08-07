@@ -7,7 +7,9 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class ReadyToAttack : Conditional
 {
-    public SharedInt attackCount;
+    //public SharedInt attackCount;
+    public SetNewWaypoint waypoint;
+
     public int minRateOfAttack, maxRateOfAttack;
     public int rateOfAttack;
 
@@ -18,7 +20,7 @@ public class ReadyToAttack : Conditional
     public override TaskStatus OnUpdate()
     {
 
-        if (attackCount.Value % rateOfAttack == 0 && attackCount.Value > 0f)
+        if (waypoint.attackCount.Value % rateOfAttack == 0 && waypoint.attackCount.Value > 0f)
         {
             Debug.Log("Attacking");
             rateOfAttack = Random.Range(minRateOfAttack, maxRateOfAttack);
