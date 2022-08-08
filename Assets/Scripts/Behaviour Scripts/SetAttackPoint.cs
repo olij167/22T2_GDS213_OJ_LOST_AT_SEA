@@ -16,8 +16,8 @@ public class SetAttackPoint : Action
         //AddAttackPoints();
         attackPointsList = new List<Transform>();
 
-        if (GameObject.FindGameObjectWithTag("Player"))
-            attackPointsList.Add(GameObject.FindGameObjectWithTag("Player").transform);
+        //if (GameObject.FindGameObjectWithTag("Player"))
+        //    attackPointsList.Add(GameObject.FindGameObjectWithTag("Player").transform);
 
         for (int i = 0; i < GameObject.FindGameObjectsWithTag("AttackPoint").Length; i++)
         {
