@@ -35,7 +35,8 @@ public class MoveTowards : Action
         else
         {
             targetWaterLevel = new Vector3(target.Value.position.x, transform.position.y, target.Value.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetWaterLevel, speed * Time.deltaTime);
+            transform.GetComponent<Rigidbody>().MovePosition(transform.position + targetWaterLevel * speed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, targetWaterLevel, speed * Time.deltaTime);
             transform.LookAt(targetWaterLevel);
         }
         
