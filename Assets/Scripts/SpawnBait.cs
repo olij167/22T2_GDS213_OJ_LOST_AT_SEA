@@ -8,7 +8,21 @@ public class SpawnBait : MonoBehaviour
 
     public SpawnBaitAction onSpawnBait;
 
-    public GameObject sharkBait, hand;
+    public Transform sharkBait;
+
+    public Vector3 spawnOffset;
+
+    Vector3 spawnPosition;
+
+    private void Awake()
+    {
+        //SpawnBaitObject();
+    }
+
+    private void Update()
+    {
+        spawnPosition = new Vector3(transform.position.x + spawnOffset.x, transform.position.y + spawnOffset.y, transform.position.z + spawnOffset.z);
+    }
 
     private void OnEnable()
     {
@@ -22,7 +36,7 @@ public class SpawnBait : MonoBehaviour
 
     public void SpawnBaitObject()
     {
-        Instantiate(sharkBait, hand.transform.position, Quaternion.identity);
+        Instantiate(sharkBait, spawnPosition, Quaternion.identity);
     }
 
 }
