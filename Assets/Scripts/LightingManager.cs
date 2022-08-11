@@ -19,7 +19,7 @@ public class LightingManager : MonoBehaviour
 
     public int dawnSharksToSpawn = 1, middaySharksToSpawn = 1, duskSharksToSpawn = 3, midnightSharksToSpawn = 2;
 
-    public int hour, sharkCount;
+    public int currentHour, sharkCount, maxSharks;
     public bool spawnSharks;
 
     private void Start()
@@ -60,11 +60,11 @@ public class LightingManager : MonoBehaviour
             //{
             //    onSpawnShark();
             //}
-            hour = (int)timeOfDay;
+            currentHour = (int)timeOfDay;
             sharkCount = GameObject.FindGameObjectsWithTag("Shark").Length;
-            if (!spawnSharks && sharkCount < 8)
+            if (!spawnSharks && sharkCount < maxSharks)
             {
-                switch (hour)
+                switch (currentHour)
                 {
                     case 6:
                         {
@@ -102,7 +102,7 @@ public class LightingManager : MonoBehaviour
             }
             else
             {
-                switch (hour)
+                switch (currentHour)
                 {
 
                     case 7:

@@ -13,9 +13,9 @@ public class OarCollision : MonoBehaviour
         sharkBehaviour = GetComponent<BehaviorTree>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Oar"))
+        if (other.gameObject.CompareTag("Oar"))
         {
             sharkBehaviour.SetVariableValue("isLeaving", true);
         }

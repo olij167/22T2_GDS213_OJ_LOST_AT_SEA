@@ -6,15 +6,20 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class SharkAttack : Action
 {
-    GameObject raft;
+    //GameObject raft;
+    //GameObject player;
+    //List<Transform> attackPointsList;
+
+    public SetAttackPoint attackPoint;
+
     public float speed = 5f, distanceFromTarget, attackTimer;
     float attackTimerReset;
 
-    public SharedInt attackCount;
-
     public override void OnAwake()
     {
-        raft = GameObject.FindGameObjectWithTag("Raft");
+        //raft = GameObject.FindGameObjectWithTag("Raft");
+        //player = GameObject.FindGameObjectWithTag("Player");
+
         attackTimerReset = attackTimer;
     }
     public override TaskStatus OnUpdate()
@@ -29,8 +34,9 @@ public class SharkAttack : Action
 
         //}
 
-        if (attackTimer <= 0f)
+        if (attackTimer <= 0f || Vector3.Distance(transform.position, attackPoint.attackTarget.transform.position) <= distanceFromTarget)
         {
+            attackPoint.attackTarget = null;
             attackTimer = attackTimerReset;
             return TaskStatus.Success;
         }
@@ -38,9 +44,10 @@ public class SharkAttack : Action
         attackTimer -= Time.deltaTime;
 
         //transform.position = Vector3.MoveTowards(transform.position, raft.transform.position, speed * Time.deltaTime);
-        Vector3 waterHeightRaftPosition = new Vector3(raft.transform.position.x, transform.position.y, raft.transform.position.z);
-        transform.position = Vector3.MoveTowards(transform.position , waterHeightRaftPosition, speed * Time.deltaTime);
-        transform.LookAt(waterHeightRaftPosition);
+        //Vector3 waterHeightRaftPosition = new Vector3(raft.transform.position.x, transform.position.y, raft.transform.position.z);
+        //transform.position = Vector3.MoveTowards(transform.position , waterHeightRaftPosition, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position , attackPoint.attackTarget.position, speed * Time.deltaTime);
+        transform.LookAt(attackPoint.attackTarget.position);
         
 
 

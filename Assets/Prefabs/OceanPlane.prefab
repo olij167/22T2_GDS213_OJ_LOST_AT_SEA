@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 782101273221127625}
   - component: {fileID: 782101273221127624}
   - component: {fileID: 782101273221127627}
+  - component: {fileID: 605327996782757452}
   m_Layer: 0
   m_Name: OceanPlane
   m_TagString: Ocean
@@ -98,3 +99,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &605327996782757452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782101273221127626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1e5ce03f3fde148b4372ac088c4681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharkBehaviour: {fileID: 4007749288490808236, guid: fc0add5fcdc8c3f49bb89b49ac62ebd5,
+    type: 3}
+  isBaitInWater:
+    mIsShared: 0
+    mIsGlobal: 1
+    mIsDynamic: 0
+    mName: 
+    mToolTip: 
+    mPropertyMapping: 
+    mPropertyMappingOwner: {fileID: 0}
+    mValue: 0
+  baitPos:
+    mIsShared: 0
+    mIsGlobal: 1
+    mIsDynamic: 0
+    mName: 
+    mToolTip: 
+    mPropertyMapping: 
+    mPropertyMappingOwner: {fileID: 0}
+    mValue: {x: 0, y: 0, z: 0}
+  baitInWater: 0
