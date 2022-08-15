@@ -77,7 +77,7 @@ public class GoToBaitAction : Action
 
     public void FindClosestBait()
     {
-        Debug.Log("Finding Closest Bait");
+        //Debug.Log("Finding Closest Bait");
 
         for (int i = 0; i < baitList.Value.Count; i++)
         {

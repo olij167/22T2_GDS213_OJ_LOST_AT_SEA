@@ -29,17 +29,17 @@ public class OarCollision : MonoBehaviour
         if (other.gameObject.CompareTag("Oar"))
         {
             sharkBehaviour.SetVariableValue("isLeaving", true);
-            Debug.Log("A shark has been hit by an oar and is leaving");
+            //Debug.Log("A shark has been hit by an oar and is leaving");
         }
 
         if (other.gameObject.CompareTag("Raft"))
         {
-            Debug.Log("a shark has collided with the boat");
+            //Debug.Log("a shark has collided with the boat");
             if (!hasDamagedBoat)
             {
                 shipDamage.raftHealth -= damage;
                 hasDamagedBoat = true;
-                Debug.Log("a shark has damaged with the boat");
+                //Debug.Log("a shark has damaged with the boat");
 
             }
         }
@@ -50,7 +50,7 @@ public class OarCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Raft"))
         {
             hasDamagedBoat = false;
-            Debug.Log("a shark has stopped colliding with the boat");
+            //Debug.Log("a shark has stopped colliding with the boat");
 
         }
     }
