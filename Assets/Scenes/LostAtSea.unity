@@ -846,7 +846,7 @@ MonoBehaviour:
   preset: {fileID: 11400000, guid: 298bc69127c02084f8901b0761d927dd, type: 2}
   timeOfDay: 6
   timeMultiplier: 0.1
-  shark: {fileID: 4007749288490808234, guid: fc0add5fcdc8c3f49bb89b49ac62ebd5, type: 3}
+  shark: {fileID: 4007749288490808234, guid: e3a68379eb0380644bd7b9da19fa3d94, type: 3}
   spawnerList:
   - {fileID: 298093430}
   - {fileID: 1614507899}
