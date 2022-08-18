@@ -1,102 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4007749287704473153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4007749287704473154}
-  - component: {fileID: 4007749287704473157}
-  - component: {fileID: 4007749287704473156}
-  - component: {fileID: 4007749287704473155}
-  m_Layer: 6
-  m_Name: Floaties
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4007749287704473154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749287704473153}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.017050045, z: -0.06500006}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1948610848380653341}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4007749287704473157
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749287704473153}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4007749287704473156
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749287704473153}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4007749287704473155
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749287704473153}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4007749288490808234
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,10 +70,10 @@ MonoBehaviour:
         Leave Point","Instant":true,"SharedTransformexitPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
         Point","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(155,151.250031)"},"ID":4,"Name":"Harass
         Player Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.SelectorEvaluator","NodeData":{"Offset":"(-173.371216,167.027008)"},"ID":5,"Name":"Selector
-        Evaluator","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-748.8667,80.78348)"},"ID":6,"Name":"Bait
+        Evaluator","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-748.8667,80.78348)"},"ID":6,"Name":"Bait
         Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BaitConditional","NodeData":{"Offset":"(-155.375946,135.930237)"},"ID":7,"Name":"Bait
-        Conditional","Instant":true,"SharedBoolbaitInWater":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isBaitInWater","IsShared":true,"BooleanmValue":false}},{"Type":"GoToBaitAction","NodeData":{"Offset":"(74.3133,143.257935)"},"ID":8,"Name":"Go
-        To Bait Action","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SharedTransformbaitPos":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"BaitPos","IsShared":true},"SharedTransformListbaitList":{"Type":"BehaviorDesigner.Runtime.SharedTransformList","Name":"BaitList","IsShared":true,"List`1mValue":[]},"SharedBoolbaitInWater":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isBaitInWater","IsShared":true,"BooleanmValue":false},"Singlespeed":5,"SingledistanceFromTarget":2,"SingleconsumptionTimer":3}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-391.2695,209.655167)"},"ID":9,"Name":"Attack
+        Conditional","Instant":true,"SharedBoolbaitInWater":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isBaitInWater","IsShared":true,"BooleanmValue":false},"SharedBoolisLeaving":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isLeaving","IsShared":true,"BooleanmValue":false}},{"Type":"GoToBaitAction","NodeData":{"Offset":"(74.3133,143.257935)"},"ID":8,"Name":"Go
+        To Bait Action","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SharedTransformbaitPos":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"BaitPos","IsShared":true},"SharedTransformListbaitList":{"Type":"BehaviorDesigner.Runtime.SharedTransformList","Name":"BaitList","IsShared":true,"List`1mValue":[]},"SharedBoolbaitInWater":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isBaitInWater","IsShared":true,"BooleanmValue":false},"SharedBoolisLeaving":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isLeaving","IsShared":true,"BooleanmValue":false},"Singlespeed":5,"SingledistanceFromTarget":2,"SingleconsumptionTimer":3}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-391.2695,209.655167)"},"ID":9,"Name":"Attack
         Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ReadyToAttack","NodeData":{"Offset":"(-302.887177,183.847443)"},"ID":10,"Name":"Ready
         To Attack","Instant":true,"SetNewWaypointwaypoint":22,"Int32minRateOfAttack":4,"Int32maxRateOfAttack":8,"Int32rateOfAttack":8},{"Type":"SetAttackPoint","NodeData":{"Offset":"(-164.1569,192.39563)"},"ID":11,"Name":"Set
         Attack Point","Instant":true,"SetNewWaypointwaypoint":22},{"Type":"SharkAttack","NodeData":{"Offset":"(-22.87629,182.90332)"},"ID":12,"Name":"Shark
@@ -184,7 +87,7 @@ MonoBehaviour:
         Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
         Point","IsShared":true},"SingledistanceFromWaypoint":1},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject.Destroy","NodeData":{"Offset":"(110.452759,171.78067)"},"ID":19,"Name":"Destroy","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"Singletime":0}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(129.9679,181.339249)"},"ID":20,"Name":"Set
         Point Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"WaypointReached","NodeData":{"Offset":"(-7.70569229,161.2256)"},"ID":21,"Name":"Waypoint
-        Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SingledistanceFromWaypoint":0},{"Type":"SetNewWaypoint","NodeData":{"Offset":"(183.268356,153.252136)"},"ID":22,"Name":"Set
+        Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SingledistanceFromWaypoint":1},{"Type":"SetNewWaypoint","NodeData":{"Offset":"(183.268356,153.252136)"},"ID":22,"Name":"Set
         New Waypoint","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"Transform[]targetList":[],"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedIntattackCount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0}}]},{"Type":"MoveTowards","NodeData":{"Offset":"(366.2384,158.4455)"},"ID":23,"Name":"Move
         Towards Point","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"Singlespeed":3,"SingledistanceFromTarget":0.5,"LeaveTimerleaveTimer":15,"SharedTransformexitPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
         Point","IsShared":true}}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"inCircleRange","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Waypoint
@@ -232,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingObjects:
-  - {fileID: 4007749287704473154}
-  - {fileID: 4007749288664725126}
+  - {fileID: 2540138797640702625}
+  - {fileID: 2540138796680446565}
   underWaterDrag: 1
   underWaterAngularDrag: 0.05
   airDrag: 3
@@ -254,103 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasDamagedBoat: 0
   damage: 1
---- !u!1 &4007749288664725125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4007749288664725126}
-  - component: {fileID: 4007749288664725129}
-  - component: {fileID: 4007749288664725128}
-  - component: {fileID: 4007749288664725127}
-  m_Layer: 6
-  m_Name: Floaties
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4007749288664725126
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749288664725125}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.017050039, z: 0.06500008}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1948610848380653341}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4007749288664725129
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749288664725125}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4007749288664725128
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749288664725125}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4007749288664725127
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007749288664725125}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1503639847359542499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,27 +167,27 @@ PrefabInstance:
     - target: {fileID: 332998005395235140, guid: d98eeb41be4df6e4c8a94c79828467a0,
         type: 3}
       propertyPath: m_Name
-      value: hark Model
+      value: Shark Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 332998005395235140, guid: d98eeb41be4df6e4c8a94c79828467a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 420266458414520845, guid: d98eeb41be4df6e4c8a94c79828467a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 442872160347464481, guid: d98eeb41be4df6e4c8a94c79828467a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
         type: 3}
@@ -433,36 +239,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
+    - target: {fileID: 1209487319015334983, guid: d98eeb41be4df6e4c8a94c79828467a0,
         type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d98eeb41be4df6e4c8a94c79828467a0, type: 3}
---- !u!1 &1171230102294615463 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 332998005395235140, guid: d98eeb41be4df6e4c8a94c79828467a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1503639847359542499}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &8904365015840527803
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171230102294615463}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.02
-  m_Height: 0.21
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.025, z: -0.01}
 --- !u!4 &1948610848380653341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1140777705580493822, guid: d98eeb41be4df6e4c8a94c79828467a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1503639847359542499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2540138796680446565 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4007749288664725126, guid: d98eeb41be4df6e4c8a94c79828467a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1503639847359542499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2540138797640702625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4007749287704473154, guid: d98eeb41be4df6e4c8a94c79828467a0,
     type: 3}
   m_PrefabInstance: {fileID: 1503639847359542499}
   m_PrefabAsset: {fileID: 0}
