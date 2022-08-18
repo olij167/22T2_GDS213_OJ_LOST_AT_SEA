@@ -28,6 +28,12 @@ public class Motor : MonoBehaviour
         stickRotation.y = (stickRotation.y > 180) ? stickRotation.y - 360 : stickRotation.y;
         stickRotation.y = Mathf.Clamp(stickRotation.y, minRotation, maxRotation);
 
+        //Quaternion rotation = Quaternion.Euler(stickRotation);
+
+        Vector3 boatRotation = new Vector3(0, boat.eulerAngles.y, 0);
+
+        //boat.rotation = Quaternion.FromToRotation(boatRotation, stickRotation * rotationSpeed * Time.deltaTime);
+
         //boat.rotation = Quaternion.Euler(stickRotation * rotationSpeed * Time.deltaTime);
 
         boat.Rotate(-stickRotation * rotationSpeed * Time.deltaTime, 0, Space.Self);
