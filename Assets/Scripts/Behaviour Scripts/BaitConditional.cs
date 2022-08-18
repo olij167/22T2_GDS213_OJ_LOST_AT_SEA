@@ -6,11 +6,11 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class BaitConditional : Conditional
 {
-    public SharedBool baitInWater, isLeaving;
+    public SharedBool baitInWater;
     
     public override TaskStatus OnUpdate()
     {
-        if (baitInWater.Value && !isLeaving.Value)
+        if (baitInWater.Value)
         {
             return TaskStatus.Success;
         }

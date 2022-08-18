@@ -53,7 +53,7 @@ public class OarCollision : MonoBehaviour
 
         if (other.gameObject.CompareTag("Raft"))
         {
-            //Debug.Log("a shark has collided with the boat");
+            Debug.Log("a shark has collided with the boat");
             if (!hasDamagedBoat)
             {
                 if(shipDamage.raftDamaged)
@@ -65,7 +65,7 @@ public class OarCollision : MonoBehaviour
                 }
                 StartCoroutine(shipDamage.FlashCo());
                 hasDamagedBoat = true;
-                //Debug.Log("a shark has damaged with the boat");
+                Debug.Log("a shark has damaged with the boat");
 
             }
         }
@@ -76,7 +76,7 @@ public class OarCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Raft"))
         {
             hasDamagedBoat = false;
-            //Debug.Log("a shark has stopped colliding with the boat");
+            Debug.Log("a shark has stopped colliding with the boat");
 
         }
     }

@@ -111,13 +111,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1e5ce03f3fde148b4372ac088c4681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharkList: []
-  baitList:
+  sharkBehaviour: {fileID: 4007749288490808236, guid: fc0add5fcdc8c3f49bb89b49ac62ebd5,
+    type: 3}
+  isBaitInWater:
     mIsShared: 0
-    mIsGlobal: 0
+    mIsGlobal: 1
     mIsDynamic: 0
     mName: 
     mToolTip: 
     mPropertyMapping: 
     mPropertyMappingOwner: {fileID: 0}
-    mValue: []
+    mValue: 0
+  baitPos:
+    mIsShared: 0
+    mIsGlobal: 1
+    mIsDynamic: 0
+    mName: 
+    mToolTip: 
+    mPropertyMapping: 
+    mPropertyMappingOwner: {fileID: 0}
+    mValue: {x: 0, y: 0, z: 0}
+  baitInWater: 0

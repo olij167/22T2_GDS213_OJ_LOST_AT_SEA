@@ -10,7 +10,7 @@ public class GoToBaitAction : Action
 
     public SharedTransformList baitList;
 
-    public SharedBool baitInWater, isLeaving;
+    public SharedBool baitInWater;
 
     float closest = 1000f;
 
@@ -23,6 +23,7 @@ public class GoToBaitAction : Action
         timerReset = consumptionTimer;
     }
 
+    // Update is called once per frame
     public override TaskStatus OnUpdate()
     {
         if (baitList.Value != null && baitPos.Value == null)
@@ -76,49 +77,42 @@ public class GoToBaitAction : Action
 
     public void FindClosestBait()
     {
-        //Debug.Log("Finding Closest Bait");
-        if (!isLeaving.Value)
+        Debug.Log("Finding Closest Bait");
+
+        for (int i = 0; i < baitList.Value.Count; i++)
         {
-
-            for (int i = 0; i < baitList.Value.Count; i++)
+            if (baitList.Value[i] != null)
             {
-                if (baitList.Value[i] != null)
+
+                baitPos.SetValue(baitList.Value[i]);
+                consumptionTimer = timerReset;
+
+                //float dist = Vector3.Distance(baitList.Value[i].position, gameObject.transform.position);
+
+                //if (dist < closest)
+                //{
+                //    closest = dist;
+                //    //Transform closestBait = baitList.Value[i];
+                //    baitPos.SetValue(baitList.Value[i]);
+                //    consumptionTimer = timerReset;
+
+                //    Debug.Log("Going to Closest Bait");
+
+                //}
+            }
+            else
+            {
+                baitList.Value.RemoveAt(i);
+
+                if (baitList.Value.Count > 0)
                 {
-
-                    baitPos.SetValue(baitList.Value[i]);
-                    consumptionTimer = timerReset;
-
-                    //float dist = Vector3.Distance(baitList.Value[i].position, gameObject.transform.position);
-
-                    //if (dist < closest)
-                    //{
-                    //    closest = dist;
-                    //    //Transform closestBait = baitList.Value[i];
-                    //    baitPos.SetValue(baitList.Value[i]);
-                    //    consumptionTimer = timerReset;
-
-                    //    Debug.Log("Going to Closest Bait");
-
-                    //}
+                    FindClosestBait();
                 }
                 else
                 {
-                    baitList.Value.RemoveAt(i);
-
-                    if (baitList.Value.Count > 0)
-                    {
-                        FindClosestBait();
-                    }
-                    else
-                    {
-                        baitInWater.Value = false;
-                    }
+                    baitInWater.Value = false;
                 }
             }
-        }
-        else
-        {
-            baitInWater.Value = false;
         }
     }
 }
