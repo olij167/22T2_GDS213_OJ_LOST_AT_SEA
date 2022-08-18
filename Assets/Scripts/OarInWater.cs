@@ -56,9 +56,9 @@ public class OarInWater : MonoBehaviour
             
             if (currentRotation != lastRotation)
             {
-                boat.GetComponent<Rigidbody>().AddForceAtPosition(-oarRotationVelocity.normalized / underWaterDrag * rotationPower, boat.transform.position, forceMode);
+                boat.GetComponent<Rigidbody>().AddForceAtPosition(-oarRotationVelocity.normalized / underWaterDrag * rotationPower * Time.deltaTime, boat.transform.position, forceMode);
 
-                Debug.Log("Adding rotation movement force: " + -oarRotationVelocity.normalized / underWaterDrag * rotationPower);
+                Debug.Log("Adding rotation movement force: " + -oarRotationVelocity.normalized / underWaterDrag * rotationPower * Time.deltaTime);
 
             }
 
