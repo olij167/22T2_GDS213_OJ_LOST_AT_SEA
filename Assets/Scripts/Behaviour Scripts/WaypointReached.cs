@@ -8,7 +8,9 @@ public class WaypointReached : Conditional
 {
     public SharedTransform target;
 
-    public float distanceFromWaypoint;
+    float distanceFromWaypoint;
+
+    public float withinWaypointDistance = 1f;
 
    
 
@@ -17,7 +19,7 @@ public class WaypointReached : Conditional
         //return base.OnUpdate();
         distanceFromWaypoint = Vector3.Distance(transform.position, target.Value.position);
 
-        if (distanceFromWaypoint <= 0.5)
+        if (distanceFromWaypoint <= withinWaypointDistance)
         {
 
             return TaskStatus.Success;

@@ -12,16 +12,48 @@ public class SpawnBait : MonoBehaviour
 
     public Vector3 spawnOffset;
 
-    Vector3 spawnPosition;
+    private Vector3 spawnPosition;
+
+    public int baitLimit = 2;
+
+
+    /// <summary>
+    /// For testing without a VR headset.
+    /// Set to true to spawn bait based on the Spawn Timer.
+    /// </summary>
+    [SerializeField] private bool debugMode;
+
+    public float spawnTimer = 3f;
+    private float timerReset;
+
+    [SerializeField] private List<GameObject> baitObjects;
 
     private void Awake()
     {
-        //SpawnBaitObject();
+
+        if (debugMode)
+        {
+            timerReset = spawnTimer;
+        }
+
+        CheckBaitNumber();
     }
 
     private void Update()
     {
         spawnPosition = new Vector3(transform.position.x + spawnOffset.x, transform.position.y + spawnOffset.y, transform.position.z + spawnOffset.z);
+
+
+        if (debugMode)
+        {
+            spawnTimer -= Time.deltaTime;
+
+            if (spawnTimer <= 0f)
+            {
+                SpawnBaitObject();
+                spawnTimer = timerReset;
+            }
+        }
     }
 
     private void OnEnable()
@@ -36,7 +68,30 @@ public class SpawnBait : MonoBehaviour
 
     public void SpawnBaitObject()
     {
-        Instantiate(sharkBait, spawnPosition, Quaternion.identity);
+        CheckBaitNumber();
+        if (debugMode)
+            Debug.Log("Checking bait num...");
+
+        if (baitObjects.Count < baitLimit)
+        {
+            Instantiate(sharkBait, spawnPosition, Quaternion.identity);
+            if (debugMode)
+                Debug.Log("New Bait Spawned");
+        }
+        else if(debugMode)
+        {
+            Debug.Log("Couldnt Spawn New Bait, the limit has been reached");
+        }
+    }
+
+    public void CheckBaitNumber()
+    {
+        baitObjects = new List<GameObject>();
+
+        foreach(GameObject bait in GameObject.FindGameObjectsWithTag("SharkBait"))
+        {
+            baitObjects.Add(bait);
+        }
     }
 
 }
