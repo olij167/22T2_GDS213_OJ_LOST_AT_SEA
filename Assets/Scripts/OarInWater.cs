@@ -16,11 +16,11 @@ public class OarInWater : MonoBehaviour
 
     [SerializeField] private GameObject boat, boatRotationPivot;
 
-    [SerializeField] private float power;
+    [SerializeField] private float power, rotationPower, checkPosWaitTime = 1f;
 
-    [SerializeField] private Vector3 oarVelocity;
-    [SerializeField] private Vector3 lastPos;
-    [SerializeField] private Vector3 currentPos;
+    [SerializeField] private Vector3 oarVelocity, oarRotationVelocity;
+    [SerializeField] private Vector3 lastPos, lastRotation;
+    [SerializeField] private Vector3 currentPos, currentRotation;
     //[SerializeField] private float worldDegrees;
     //[SerializeField] private float localDegrees;
     //[SerializeField] private float oarZRotation;
@@ -50,7 +50,15 @@ public class OarInWater : MonoBehaviour
                 //boat.GetComponent<Rigidbody>().AddForce(-oarDirection.normalized * power);
                 //boat.transform.RotateAround(boatRotationPivot.transform.position, Vector3.up, oarVelocity.magnitude * Time.deltaTime);
 
-                Debug.Log("Adding force: " + oarVelocity.normalized / underWaterDrag * power);
+                Debug.Log("Adding position movement force: " + -oarVelocity.normalized / underWaterDrag * power);
+
+            }
+            
+            if (currentRotation != lastRotation)
+            {
+                boat.GetComponent<Rigidbody>().AddForceAtPosition(-oarRotationVelocity.normalized / underWaterDrag * rotationPower, boat.transform.position, forceMode);
+
+                Debug.Log("Adding rotation movement force: " + -oarRotationVelocity.normalized / underWaterDrag * rotationPower);
 
             }
 
@@ -62,10 +70,6 @@ public class OarInWater : MonoBehaviour
         if (other.CompareTag("Ocean"))
         {
             isUnderwater = true;
-            //waterEntryPos = transform.position;
-            //lastPos = waterEntryPos;
-
-            //oarVelocity = waterEntryPos - transform.position;
 
             SwitchDragType(isUnderwater);
 
@@ -79,10 +83,6 @@ public class OarInWater : MonoBehaviour
         {
             isUnderwater = false;
             SwitchDragType(isUnderwater);
-
-            //waterEntryPos = Vector3.zero;
-            //oarDirection = Vector3.zero;
-            //oarVelocity = Vector3.zero;
 
             Debug.Log("Oar left water");
 
@@ -105,17 +105,20 @@ public class OarInWater : MonoBehaviour
 
     IEnumerator CheckMovement()
     {
-        //currentPos = new Vector3(transform.localEulerAngles.y, transform.localEulerAngles.x, transform.localEulerAngles.z);
+        currentRotation = new Vector3(transform.localEulerAngles.y, transform.localEulerAngles.x, transform.localEulerAngles.z);
         currentPos = transform.position;
 
         oarVelocity = currentPos - lastPos;
+        oarRotationVelocity = currentRotation - lastRotation;
 
         //worldDegrees = Vector3.Angle(Vector3.forward, oarVelocity.normalized); // angle relative to world space
         //localDegrees = Vector3.Angle(boat.transform.forward, oarVelocity.normalized); // angle relative to last heading of myobject
 
         //oarDirection = lastPos - currentPos;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(checkPosWaitTime);
+
+        lastRotation = currentRotation;
         lastPos = currentPos;
     }
 }
