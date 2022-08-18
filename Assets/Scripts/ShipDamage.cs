@@ -6,14 +6,10 @@ public class ShipDamage : MonoBehaviour
 {
     [SerializeField] public int raftHealth = 200;
 
-    [SerializeField] public bool raftDamaged = false;
-    [SerializeField] int numberOfFlashes = 3;
-    [SerializeField] float flashDuration;
-    [SerializeField] Material myMaterial;
-    [SerializeField] Color originalColor;
-    [SerializeField] Color flashColor;
-
     BuoyancyObject buoyancy;
+
+    [SerializeField] private GameObject boat;
+    [SerializeField] private Texture[] boatDamageTextures;
 
     // Start is called before the first frame update
     void Start()
@@ -27,31 +23,38 @@ public class ShipDamage : MonoBehaviour
         if(raftHealth < 200 &&  raftHealth >= 150)
         {
             buoyancy.floatingPower = 750;
+
+            boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[0];
         }
         
         if(raftHealth < 150 &&  raftHealth >= 100)
         {
             buoyancy.floatingPower = 600;
+            boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[1];
         }
         
         if(raftHealth < 100 &&  raftHealth >= 50)
         {
             buoyancy.floatingPower = 500;
+            boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[2];
         }
         
         if(raftHealth < 50 &&  raftHealth >= 10)
         {
             buoyancy.floatingPower = 400;
+            boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[3];
         }
         
         if(raftHealth < 10 &&  raftHealth >= 1)
         {
             buoyancy.floatingPower = 200;
+            boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[4];
         }
         
         if(raftHealth <= 0)
         {
             buoyancy.floatingPower = 0;
+            boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[5];
         }
 
 
@@ -59,35 +62,11 @@ public class ShipDamage : MonoBehaviour
 
     //private void OnCollisionEnter(Collision other)
     //{
-    //    if (other.gameObject.tag == "Shark")
+    //    if(other.gameObject.tag == "Shark")
     //    {
-    //        if(raftDamaged)
-    //        {
-    //            raftHealth -= 0;
-    //        } else
-    //        {
-    //            raftHealth -= 1;
+    //        raftHealth -= 1;
 
-    //        }
-            
 
-    //        StartCoroutine(FlashCo());
     //    }
     //}
-
-    public IEnumerator FlashCo()
-    {
-        int temp = 0;
-        raftDamaged = true;
-        while (temp < numberOfFlashes)
-        {
-            myMaterial.color = flashColor;
-            yield return new WaitForSeconds(flashDuration);
-            myMaterial.color = originalColor;
-            yield return new WaitForSeconds(flashDuration);
-            temp++;
-        }
-        raftDamaged = false;
-    }
-
 }

@@ -6,7 +6,7 @@ public class OarSelection : MonoBehaviour
 {
     public Transform oarPosition;
 
-    public Quaternion oarRotation;
+    public Vector3 oarRotation;
 
     public delegate void DeselectOarAction();
 
@@ -14,7 +14,7 @@ public class OarSelection : MonoBehaviour
 
     public void Awake()
     {
-        oarRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        oarRotation = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
     }
 
     public void OnEnable()
@@ -31,6 +31,6 @@ public class OarSelection : MonoBehaviour
     public void DeselectOar()
     {
         transform.position = oarPosition.position;
-        transform.rotation = oarRotation;
+        transform.localEulerAngles = oarRotation;
     }
 }
