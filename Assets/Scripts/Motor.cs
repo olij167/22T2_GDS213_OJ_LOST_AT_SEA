@@ -4,46 +4,64 @@ using UnityEngine;
 
 public class Motor : MonoBehaviour
 {
-    [SerializeField] private float minRotation, maxRotation, speed = 10f, rotation;
-    [SerializeField] private float rotationSpeed;
+    //// if stick pivot rotation y is < -90 && > 90
+    //// rotate boat in the opposite direction of stick
+    //// increase speed based on how close rotation is to limit
+
+    [SerializeField] private float minRotation, maxRotation;
+    [SerializeField] private float speed = 1f, rotationSpeed = 5f;
     [SerializeField] private Transform boat, stickPivot;
-    [SerializeField] private Vector3 movementDirection;
-
-
-    private void Start()
-    {
-        movementDirection = boat.forward;
-
-    }
-
-
+    //[SerializeField] private Vector3 rotationVector;
+    //[SerializeField] private Quaternion rotation;
 
     void Update()
     {
-        //float newRotation = rotation + stickPivot.eulerAngles.y * rotationSpeed * Time.deltaTime;
-        rotation = stickPivot.rotation.y;
-        //move forward
-        boat.Rotate(0, -rotation, 0, Space.Self);
-        boat.position += movementDirection * speed * Time.deltaTime;
+        ////move forward
+        boat.position += boat.forward * speed * Time.deltaTime;
 
-        
+        //// steer
+        //rotationVector = new Vector3(0, stickPivot.localEulerAngles.y, 0);
 
-        //steering
-            //if stick pivot rotation y is < 0 && > 180
-                //rotate boat to the right based on how close it is to -180
-            //do the same for the other direction
+        //Quaternion targetRotation = Quaternion.FromToRotation(boat.eulerAngles, stickPivot.localEulerAngles);
 
-        // turn right
-        //if (stickPivot.localEulerAngles.y < 0 && stickPivot.localEulerAngles.y > minRotation)
-        //{
-        //    movementDirection = boat.forward;//  stickPivot.rotation;
-        //}
-        
-        //// turn left
-        //if (stickPivot.localEulerAngles.y > 0 && stickPivot.localEulerAngles.y < maxRotation)
-        //{
-        //    movementDirection = boat.forward - boat.right;
-        //}
+        Vector3 stickRotation = stickPivot.rotation.eulerAngles;
+        stickRotation.y = (stickRotation.y > 180) ? stickRotation.y - 360 : stickRotation.y;
+        stickRotation.y = Mathf.Clamp(stickRotation.y, minRotation, maxRotation);
+
+        //boat.rotation = Quaternion.Euler(stickRotation * rotationSpeed * Time.deltaTime);
+
+        boat.Rotate(-stickRotation * rotationSpeed * Time.deltaTime, 0, Space.Self);
+
+        //LimitRotation();
 
     }
+
+    private void LimitRotation()
+    {
+        
+
+
+        //Quaternion rotationMin = new Quaternion(0, stickPivot.rotation.y - minRotation, 0, stickPivot.rotation.w);
+        //Quaternion rotationMax = new Quaternion(0, stickPivot.rotation.y + maxRotation, 0, stickPivot.rotation.w);
+
+
+
+        
+    }
 }
+
+
+
+
+
+
+//boat.Rotate(rotationVector, rotationSpeed * Time.deltaTime);
+
+//rotation = Quaternion.Euler(rotationVector);
+
+//if (rotation.y > 180)
+//{
+//    rotation.y -= 360;
+//}
+
+//stickPivot.localEulerAngles = new Vector3(0, Mathf.Clamp(stickPivot.localEulerAngles.y, minRotation, maxRotation), 0);
