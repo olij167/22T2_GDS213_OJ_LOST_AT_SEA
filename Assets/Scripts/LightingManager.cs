@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private LightingPreset preset;
     [SerializeField, Range(0, 24)] private float timeOfDay;
     [SerializeField] private float timeMultiplier;
+
+    public ActionBasedController leftControl, rightControl;
 
     //public delegate void SpawnSharkAction(int numToSpawn, SpawnSharks spawner);
 
@@ -140,7 +143,9 @@ public class LightingManager : MonoBehaviour
         {
             for (int i = 0; i < numToSpawn; i++)
             {
-                Instantiate(shark, spawnerList[rand].transform.position, Quaternion.identity);
+                GameObject newShark = Instantiate(shark, spawnerList[rand].transform.position, Quaternion.identity);
+                newShark.GetComponent<OarCollision>().leftControl = leftControl;
+                newShark.GetComponent<OarCollision>().rightControl = rightControl;
 
             }
         }
