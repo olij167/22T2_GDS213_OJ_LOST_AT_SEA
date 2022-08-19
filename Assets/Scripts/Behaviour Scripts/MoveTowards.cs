@@ -10,7 +10,9 @@ public class MoveTowards : Action
 
     Vector3 targetWaterLevel;
 
-    public float speed = 5f, distanceFromTarget;
+    public SharedFloat speed;
+
+    public float distanceFromTarget;
 
     public LeaveTimer leaveTimer;
 
@@ -40,7 +42,7 @@ public class MoveTowards : Action
 
             //transform.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * speed * Time.deltaTime, ForceMode.Force);
             //transform.GetComponent<Rigidbody>().MovePosition(transform.position - targetWaterLevel * speed * Time.deltaTime);
-            transform.position = Vector3.MoveTowards(transform.position, targetWaterLevel, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetWaterLevel, speed.Value * Time.deltaTime);
         }
         
 

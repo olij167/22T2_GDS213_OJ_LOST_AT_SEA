@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oarPosition: {fileID: 0}
-  oarRotation: {x: -0.09229596, y: 0.7010574, z: -0.09229596, w: -0.7010574}
+  oarRotation: {x: -0.09229596, y: 0.7010574, z: -0.09229596}
 --- !u!114 &7345406709642197121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,18 +262,21 @@ MonoBehaviour:
   oarRB: {fileID: 3021106203092063812}
   boat: {fileID: 0}
   boatRotationPivot: {fileID: 0}
-  power: 0.2
-  waterEntryPos: {x: 0, y: 0, z: 0}
-  oarDirection: {x: 0, y: 0, z: 0}
+  power: 0.1
+  rotationPower: 0.05
+  checkPosWaitTime: 1
   oarVelocity: {x: 0, y: 0, z: 0}
+  oarRotationVelocity: {x: 0, y: 0, z: 0}
   lastPos: {x: 0, y: 0, z: 0}
+  lastRotation: {x: 0, y: 0, z: 0}
   currentPos: {x: 0, y: 0, z: 0}
+  currentRotation: {x: 0, y: 0, z: 0}
   underWaterDrag: 3
   underWaterAngularDrag: 1
   airDrag: 0
   airAngularDrag: 0.05
   isUnderwater: 0
-  forceMode: 1
+  forceMode: 0
 --- !u!1001 &198888270450135714
 PrefabInstance:
   m_ObjectHideFlags: 0

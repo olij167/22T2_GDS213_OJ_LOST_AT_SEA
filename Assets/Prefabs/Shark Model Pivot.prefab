@@ -77,7 +77,8 @@ MonoBehaviour:
         Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ReadyToAttack","NodeData":{"Offset":"(-302.887177,183.847443)"},"ID":10,"Name":"Ready
         To Attack","Instant":true,"SetNewWaypointwaypoint":22,"Int32minRateOfAttack":4,"Int32maxRateOfAttack":8,"Int32rateOfAttack":8},{"Type":"SetAttackPoint","NodeData":{"Offset":"(-164.1569,192.39563)"},"ID":11,"Name":"Set
         Attack Point","Instant":true,"SetNewWaypointwaypoint":22},{"Type":"SharkAttack","NodeData":{"Offset":"(-22.87629,182.90332)"},"ID":12,"Name":"Shark
-        Attack","Instant":true,"SetAttackPointattackPoint":11,"Singlespeed":6,"SingledistanceFromTarget":1,"SingleattackTimer":2.5},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedInt","NodeData":{"Offset":"(125.18364,176.560333)"},"ID":13,"Name":"Set
+        Attack","Instant":true,"SetAttackPointattackPoint":11,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
+        Speed","IsShared":true,"SinglemValue":8},"SingledistanceFromTarget":1,"SingleattackTimer":2.5},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedInt","NodeData":{"Offset":"(125.18364,176.560333)"},"ID":13,"Name":"Set
         Shared Int","Instant":true,"SharedInttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedInttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
         Count","IsShared":true,"Int32mValue":0}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(321.344574,224.777161)"},"ID":14,"Name":"Circle
         Player Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"LeaveTimer","NodeData":{"Offset":"(-365.714233,205.000137)"},"ID":15,"Name":"Leave
@@ -85,15 +86,16 @@ MonoBehaviour:
         Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"LeavingConditional","NodeData":{"Offset":"(-307.169769,166.225128)"},"ID":17,"Name":"Leaving
         Conditional","Instant":true,"LeaveTimerleaveTimer":15},{"Type":"WaypointReached","NodeData":{"Offset":"(-75.23038,169.5978)"},"ID":18,"Name":"Waypoint
         Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
-        Point","IsShared":true},"SingledistanceFromWaypoint":1},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject.Destroy","NodeData":{"Offset":"(110.452759,171.78067)"},"ID":19,"Name":"Destroy","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"Singletime":0}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(129.9679,181.339249)"},"ID":20,"Name":"Set
+        Point","IsShared":true},"SinglewithinWaypointDistance":1},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject.Destroy","NodeData":{"Offset":"(110.452759,171.78067)"},"ID":19,"Name":"Destroy","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"Singletime":0}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(129.9679,181.339249)"},"ID":20,"Name":"Set
         Point Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"WaypointReached","NodeData":{"Offset":"(-7.70569229,161.2256)"},"ID":21,"Name":"Waypoint
-        Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SingledistanceFromWaypoint":1},{"Type":"SetNewWaypoint","NodeData":{"Offset":"(183.268356,153.252136)"},"ID":22,"Name":"Set
+        Reached","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SinglewithinWaypointDistance":1},{"Type":"SetNewWaypoint","NodeData":{"Offset":"(183.268356,153.252136)"},"ID":22,"Name":"Set
         New Waypoint","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"Transform[]targetList":[],"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedIntattackCount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0}}]},{"Type":"MoveTowards","NodeData":{"Offset":"(366.2384,158.4455)"},"ID":23,"Name":"Move
-        Towards Point","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"Singlespeed":3,"SingledistanceFromTarget":0.5,"LeaveTimerleaveTimer":15,"SharedTransformexitPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
+        Towards Point","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Speed","IsShared":true,"SinglemValue":5},"SingledistanceFromTarget":0.5,"LeaveTimerleaveTimer":15,"SharedTransformexitPoint":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
         Point","IsShared":true}}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"inCircleRange","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Waypoint
         Count","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"raft","IsShared":true,"GameObjectmValue":0},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"Attack
         Count","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Exit
-        Point","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isLeaving","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isBaitInWater","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"BaitPos","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedTransformList","Name":"BaitList","IsShared":true,"List`1mValue":[]}]}'
+        Point","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isLeaving","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"isBaitInWater","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"BaitPos","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedTransformList","Name":"BaitList","IsShared":true,"List`1mValue":[]},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Speed","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
+        Speed","IsShared":true,"SinglemValue":8}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -142,6 +144,7 @@ MonoBehaviour:
   airDrag: 3
   airAngularDrag: 1
   floatingPower: 5
+  underWater: 0
   floaterUnderWater: 0
 --- !u!114 &271407775227502269
 MonoBehaviour:
@@ -155,8 +158,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43b1278029ee8749b64b82dc5f5bb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharkHealth: 4
   hasDamagedBoat: 0
   damage: 1
+  numberOfFlashes: 3
+  flashDuration: 0
+  myMaterial: {fileID: 2100000, guid: 8c322a100e012c741bffbd11cbc74206, type: 2}
+  originalColor: {r: 1, g: 1, b: 1, a: 0}
+  flashColor: {r: 1, g: 0.73018867, b: 0.73018867, a: 0}
+  audiosource: {fileID: 6492829844969272330, guid: fc0add5fcdc8c3f49bb89b49ac62ebd5,
+    type: 3}
+  sharkClip: {fileID: 8300000, guid: 7b76ff882c9d26e4f8747960c1585dcc, type: 3}
+  leftControl: {fileID: 0}
+  rightControl: {fileID: 0}
+  defaultAmplitud: 0.2
+  defaultDuration: 0.5
 --- !u!1001 &1503639847359542499
 PrefabInstance:
   m_ObjectHideFlags: 0

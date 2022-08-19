@@ -9,6 +9,8 @@ public class OarCollision : MonoBehaviour
 {
     private BehaviorTree sharkBehaviour;
 
+    public int sharkHealth = 4;
+
     public bool hasDamagedBoat;
 
     ShipDamage shipDamage;
@@ -39,11 +41,29 @@ public class OarCollision : MonoBehaviour
         sharkBehaviour = GetComponent<BehaviorTree>();
     }
 
+    private void Update()
+    {
+        if (sharkHealth == 1)
+        {
+            sharkBehaviour.SetVariableValue("isLeaving", true);
+        }
+        if (sharkHealth <= 0)
+        {
+            GetComponent<BuoyancyObject>().enabled = false;
+            sharkBehaviour.enabled = false;
+
+            if (transform.position.y <= -3f)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Oar"))
         {
-            sharkBehaviour.SetVariableValue("isLeaving", true);
+            sharkHealth -= 1;
             SendHaptics();
             StartCoroutine(FlashShark());
             audiosource.PlayOneShot(sharkClip);

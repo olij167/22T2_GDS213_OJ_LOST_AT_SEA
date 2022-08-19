@@ -21,7 +21,7 @@ public class BuoyancyObject : MonoBehaviour
 
     Rigidbody rb;
 
-    bool underWater;
+    [SerializeField] private bool underWater;
 
     public int floaterUnderWater;
 

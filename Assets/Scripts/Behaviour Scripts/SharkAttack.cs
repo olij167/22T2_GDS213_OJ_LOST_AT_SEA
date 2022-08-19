@@ -12,7 +12,8 @@ public class SharkAttack : Action
 
     public SetAttackPoint attackPoint;
 
-    public float speed = 5f, distanceFromTarget, attackTimer;
+    public SharedFloat speed = 5f;
+    public float distanceFromTarget, attackTimer;
     float attackTimerReset;
 
     public override void OnAwake()
@@ -46,7 +47,7 @@ public class SharkAttack : Action
         //transform.position = Vector3.MoveTowards(transform.position, raft.transform.position, speed * Time.deltaTime);
         //Vector3 waterHeightRaftPosition = new Vector3(raft.transform.position.x, transform.position.y, raft.transform.position.z);
         //transform.position = Vector3.MoveTowards(transform.position , waterHeightRaftPosition, speed * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position , attackPoint.attackTarget.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position , attackPoint.attackTarget.position, speed.Value * Time.deltaTime);
         transform.LookAt(attackPoint.attackTarget.position);
         
 
