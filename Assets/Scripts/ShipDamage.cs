@@ -17,51 +17,137 @@ public class ShipDamage : MonoBehaviour
 
     [SerializeField] private GameObject boat;
     [SerializeField] private Texture[] boatDamageTextures;
+    [SerializeField] private AudioClip[] boatDamageAudio;
+    [SerializeField] private float[] damageThreshholds;
+    // each element of damage thresholds should be lower than the one before it
+    // they determine when the boat should sink and change textures
 
-    // Start is called before the first frame update
+    //[SerializeField] private int numberOfThresholds = 6;
+
+    [SerializeField] private float[] floatingPowerEachThreshold;
+
+    [SerializeField]  private float averageDecreaseFloatingAmount, averageDamageThresholdAmount;
+    float currentThreshold;
+
+    AudioSource boatAudio;
+
+
     void Start()
     {
+        boatAudio = GetComponent<AudioSource>();
+
         buoyancy = GetComponent<BuoyancyObject>();
+
+        // set floating power per damage threshold based on
+        // the original floating power and number of thresholds
+        floatingPowerEachThreshold = new float[5];
+
+        averageDecreaseFloatingAmount = buoyancy.floatingPower / floatingPowerEachThreshold.Length;
+
+        floatingPowerEachThreshold[0] = buoyancy.floatingPower;
+
+        for (int i = 0; i < floatingPowerEachThreshold.Length; i++)
+        {
+            if (i > 0)
+            {
+                floatingPowerEachThreshold[i] = floatingPowerEachThreshold[i - 1] - averageDecreaseFloatingAmount;
+            }
+        }
+
+        // set health value limits per damage threshold based on
+        // the original health and number of thresholds
+        damageThreshholds = new float[6];
+
+        averageDamageThresholdAmount = raftHealth / damageThreshholds.Length;
+
+        damageThreshholds[0] = raftHealth;
+
+
+        for (int i = 0; i < floatingPowerEachThreshold.Length; i++)
+        {
+            if (i > 0)
+            {
+                damageThreshholds[i] = damageThreshholds[i - 1] - averageDamageThresholdAmount;
+            }
+        }
+
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(raftHealth < 200 &&  raftHealth >= 150)
+        if(raftHealth > damageThreshholds[1])
         {
-            buoyancy.floatingPower = 750;
+            buoyancy.floatingPower = floatingPowerEachThreshold[0];
 
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[0];
         }
         
-        if(raftHealth < 150 &&  raftHealth >= 100)
+        if(raftHealth <= damageThreshholds[1] &&  raftHealth > damageThreshholds[2])
         {
-            buoyancy.floatingPower = 600;
+            if (currentThreshold != 1)
+            {
+                boatAudio.PlayOneShot(boatDamageAudio[0]);
+            }
+            
+            buoyancy.floatingPower = floatingPowerEachThreshold[1];
+
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[1];
+
+            currentThreshold = 1;
         }
         
-        if(raftHealth < 100 &&  raftHealth >= 50)
+        if(raftHealth <= damageThreshholds[2] &&  raftHealth > damageThreshholds[3])
         {
-            buoyancy.floatingPower = 500;
+            if (currentThreshold != 2)
+            {
+                boatAudio.PlayOneShot(boatDamageAudio[1]);
+            }
+
+            buoyancy.floatingPower = floatingPowerEachThreshold[2];
+
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[2];
+            currentThreshold = 2;
         }
         
-        if(raftHealth < 50 &&  raftHealth >= 10)
+        if(raftHealth <= damageThreshholds[3] &&  raftHealth > damageThreshholds[4])
         {
-            buoyancy.floatingPower = 400;
+            if (currentThreshold != 3)
+            {
+                boatAudio.PlayOneShot(boatDamageAudio[2]);
+            }
+
+            buoyancy.floatingPower = floatingPowerEachThreshold[3];
+
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[3];
+            currentThreshold = 3;
         }
         
-        if(raftHealth < 10 &&  raftHealth >= 1)
+        if(raftHealth <= damageThreshholds[4] &&  raftHealth > damageThreshholds[5])
         {
-            buoyancy.floatingPower = 200;
+            if (currentThreshold != 4)
+            {
+                boatAudio.PlayOneShot(boatDamageAudio[3]);
+            }
+
+            buoyancy.floatingPower = floatingPowerEachThreshold[4];
+
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[4];
+            currentThreshold = 4;
         }
-        
-        if(raftHealth <= 0)
+
+        if (raftHealth <= 0)
         {
+            if (currentThreshold != 5)
+            {
+                boatAudio.PlayOneShot(boatDamageAudio[4]);
+            }
+
             buoyancy.floatingPower = 0;
+            //buoyancy.floatingPower = floatingPowerEachThreshold[5];
+
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[5];
+            currentThreshold = 5;
         }
 
 
