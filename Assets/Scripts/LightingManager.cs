@@ -9,7 +9,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
     [SerializeField, Range(0, 24)] private float timeOfDay;
-    [SerializeField] private float timeMultiplier;
+    public float timeMultiplier;
 
     public ActionBasedController leftControl, rightControl;
 

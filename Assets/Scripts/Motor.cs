@@ -14,6 +14,8 @@ public class Motor : MonoBehaviour
     [SerializeField] private Rigidbody boat;
     [SerializeField] private ForceMode force;
 
+    [SerializeField] private float forceDistanceFromBoat;
+
     void Update()
     {
 
@@ -24,7 +26,11 @@ public class Motor : MonoBehaviour
 
         //stickRotation.y = (stickRotation.y > 180) ? stickRotation.y - 360 : stickRotation.y;
 
-        boat.AddForceAtPosition(stickPivot.transform.forward * rotationSpeed * Time.deltaTime, stickPivot.transform.position, force);
+        Vector3 stickPivotXZDirection = new Vector3(stickPivot.transform.right.x, 0, 0);
+
+        Vector3 boatButLower = new Vector3(boat.transform.position.x, boat.transform.position.y - forceDistanceFromBoat, boat.transform.position.z);
+
+        boat.AddForceAtPosition(stickPivotXZDirection * rotationSpeed * Time.deltaTime, transform.position, force);
 
     }
 }
