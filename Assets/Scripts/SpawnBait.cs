@@ -74,7 +74,8 @@ public class SpawnBait : MonoBehaviour
 
         if (baitObjects.Count < baitLimit)
         {
-            Instantiate(sharkBait, spawnPosition, Quaternion.identity);
+            Transform newBait = Instantiate(sharkBait, spawnPosition, Quaternion.identity);
+            newBait.parent = transform;
             if (debugMode)
                 Debug.Log("New Bait Spawned");
         }

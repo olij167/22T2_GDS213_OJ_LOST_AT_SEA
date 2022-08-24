@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private LightingManager lightingManager;
 
     [SerializeField] private GameObject startMenu;
+    [SerializeField] private Motor motor;
 
     [SerializeField] private bool gameStarted;
 
@@ -17,6 +18,8 @@ public class MainMenu : MonoBehaviour
         timeMultiplierDefault = lightingManager.timeMultiplier;
 
         lightingManager.timeMultiplier = 0;
+
+        motor.enabled = false;
     }
 
     public void StartButton()
@@ -25,6 +28,7 @@ public class MainMenu : MonoBehaviour
         {
             lightingManager.timeMultiplier = timeMultiplierDefault;
             startMenu.SetActive(false);
+            motor.enabled = true;
             gameStarted = true;
         }
     }
