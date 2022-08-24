@@ -13,6 +13,7 @@ TagManager:
   - Oar
   - SharkBait
   - AttackPoint
+  - Island
   layers:
   - Default
   - TransparentFX

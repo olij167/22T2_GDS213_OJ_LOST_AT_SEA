@@ -26,10 +26,12 @@ public class ShipDamage : MonoBehaviour
 
     [SerializeField] private float[] floatingPowerEachThreshold;
 
-    [SerializeField]  private float averageDecreaseFloatingAmount, averageDamageThresholdAmount;
+    [SerializeField]  private float averageDecreaseFloatingAmount, averageDamageThresholdAmount, gameOverYPos;
     float currentThreshold;
 
     AudioSource boatAudio;
+
+    [SerializeField] private MainMenu menuUI;
 
 
     void Start()
@@ -148,6 +150,11 @@ public class ShipDamage : MonoBehaviour
 
             boat.GetComponent<MeshRenderer>().material.mainTexture = boatDamageTextures[5];
             currentThreshold = 5;
+
+            if (transform.position.y < gameOverYPos)
+            {
+                menuUI.LoseUI();
+            }
         }
 
 
