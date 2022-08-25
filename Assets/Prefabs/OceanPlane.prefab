@@ -121,3 +121,8 @@ MonoBehaviour:
     mPropertyMapping: 
     mPropertyMappingOwner: {fileID: 0}
     mValue: []
+  baitSplashAudio:
+  - {fileID: 8300000, guid: 291ca9a742e93f9409b9cae39cf941da, type: 3}
+  - {fileID: 8300000, guid: d439893fd0b403a4ba7e8eb86e225754, type: 3}
+  - {fileID: 8300000, guid: 3e0008a4adc681c4d9fab5e02bde06e2, type: 3}
+  - {fileID: 8300000, guid: 7b76ff882c9d26e4f8747960c1585dcc, type: 3}

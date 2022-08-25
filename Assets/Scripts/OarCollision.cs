@@ -24,7 +24,7 @@ public class OarCollision : MonoBehaviour
     [SerializeField] Color flashColor;
 
     [SerializeField] AudioSource audiosource;
-    [SerializeField] AudioClip sharkClip;
+    [SerializeField] AudioClip[] sharkClip;
 
     public ActionBasedController leftControl, rightControl;
     public float defaultAmplitud = 0.2f;
@@ -66,7 +66,7 @@ public class OarCollision : MonoBehaviour
             sharkHealth -= 1;
             SendHaptics();
             StartCoroutine(FlashShark());
-            audiosource.PlayOneShot(sharkClip);
+            audiosource.PlayOneShot(sharkClip[Random.Range(0, sharkClip.Length)]);
             
             Debug.Log("A shark has been hit by an oar and is leaving");
         }
