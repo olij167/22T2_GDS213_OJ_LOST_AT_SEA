@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private LightingManager lightingManager;
 
-    [SerializeField] private GameObject startMenu, endMenu;
+    [SerializeField] private GameObject startMenu, endMenu, tutorial1, tutorial2, tutorial3, tutorial4;
     [SerializeField] private Motor motor;
 
     [SerializeField] private bool gameStarted, gameOver;
@@ -27,6 +27,10 @@ public class MainMenu : MonoBehaviour
 
         motor.enabled = false;
         endMenu.SetActive(false);
+        tutorial1.SetActive(false);
+        tutorial2.SetActive(false);
+        tutorial3.SetActive(false);
+        tutorial4.SetActive(false);
         startMenu.SetActive(true);
 
     }
@@ -43,6 +47,10 @@ public class MainMenu : MonoBehaviour
     {
         if (!gameStarted)
         {
+            tutorial1.SetActive(false);
+            tutorial2.SetActive(false);
+            tutorial3.SetActive(false);
+            tutorial4.SetActive(false);
             lightingManager.timeMultiplier = timeMultiplierDefault;
             startMenu.SetActive(false);
             motor.enabled = true;
@@ -95,10 +103,54 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void TutorialButton(TextMeshProUGUI buttonText)
+    public void TutorialButton()
     {
-        buttonText.text = "Not yet added";
+        startMenu.SetActive(false);
+        tutorial1.SetActive(true);
     }
+    
+    public void Next1()
+    {
+        tutorial1.SetActive(false);
+        tutorial2.SetActive(true);
+    }
+
+    public void Next2()
+    {
+        tutorial2.SetActive(false);
+        tutorial3.SetActive(true);
+    }
+    
+    public void Next3()
+    {
+        tutorial3.SetActive(false);
+        tutorial4.SetActive(true);
+    }
+    
+    public void Previous1()
+    {
+        startMenu.SetActive(true);
+        tutorial1.SetActive(false);
+    }
+    
+    public void Previous2()
+    {
+        tutorial1.SetActive(true);
+        tutorial2.SetActive(false);
+    }
+    
+    public void Previous3()
+    {
+        tutorial2.SetActive(true);
+        tutorial3.SetActive(false);
+    }
+    
+    public void Previous4()
+    {
+        tutorial3.SetActive(true);
+        tutorial4.SetActive(false);
+    }
+
 
     void DisplayTime(float timeToDisplay, TextMeshProUGUI timeText)
     {
