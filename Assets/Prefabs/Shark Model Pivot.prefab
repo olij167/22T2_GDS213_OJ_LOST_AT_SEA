@@ -167,8 +167,7 @@ MonoBehaviour:
   myMaterial: {fileID: 2100000, guid: 8c322a100e012c741bffbd11cbc74206, type: 2}
   originalColor: {r: 1, g: 1, b: 1, a: 0}
   flashColor: {r: 1, g: 0.73018867, b: 0.73018867, a: 0}
-  audiosource: {fileID: 6492829844969272330, guid: fc0add5fcdc8c3f49bb89b49ac62ebd5,
-    type: 3}
+  audiosource: {fileID: -3308672799088834218}
   sharkClip:
   - {fileID: 8300000, guid: 24cb07f4157b67b4fa3fe2da68970c21, type: 3}
   - {fileID: 8300000, guid: d0007bc454246134f9a4a12cd01a9beb, type: 3}
