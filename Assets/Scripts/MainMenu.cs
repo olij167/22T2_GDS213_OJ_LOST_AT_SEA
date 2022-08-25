@@ -90,7 +90,7 @@ public class MainMenu : MonoBehaviour
 
             endMenu.SetActive(true);
 
-            endText.text = "You are \n dead.";
+            endText.text = "You are \n shark bait.";
 
             DisplayTime(gameTimer, endGameTimerText);
 
@@ -100,7 +100,9 @@ public class MainMenu : MonoBehaviour
 
     public void RestartButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        
     }
 
     public void TutorialButton()
@@ -157,6 +159,6 @@ public class MainMenu : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         float milliSeconds = (timeToDisplay % 1) * 1000;
-        timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
+        timeText.text = "It took \n" + string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliSeconds);
     }
 }

@@ -11,6 +11,8 @@ public class BaitInWater : MonoBehaviour
 
     public SharedTransformList baitList;
 
+    //[SerializeField] private AudioClip[] baitSplashAudio;
+
     private void Start()
     {
         sharkList = new List<GameObject>();
@@ -30,6 +32,7 @@ public class BaitInWater : MonoBehaviour
     {
         if (other.CompareTag("SharkBait"))
         {
+            
             if (sharkList != null)
             {
                 foreach (GameObject shark in sharkList)
